@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyPay - Em breve</title>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #000000, #FFD700);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .logo {
+            width: 150px; /* Ajustado para melhor visualização em dispositivos móveis */
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 20px; /* Ajustado para melhor visualização em dispositivos móveis */
+            font-weight: bold;
+            word-break: break-word; /* Permite que a linha quebre em palavras, se necessário */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/img/logo.png" alt="Logo" class="logo"> <!-- Substitua "logo.png" pelo caminho da sua imagem -->
+        <div id="message" class="message">
+            Em breve, uma nova experiência de pagamentos PIX!
+        </div>
+    </div>
+
+    <script>
+        // Função para animar o texto palavra por palavra
+        function animateText() {
+            const message = document.getElementById('message');
+            const words = message.innerHTML.split(' ');
+            message.innerHTML = '';
+
+            let index = 0;
+            function addWord() {
+                if (index < words.length) {
+                    message.innerHTML += words[index] + ' ';
+                    index++;
+                    setTimeout(addWord, 200); // Ajuste o intervalo conforme necessário
+                }
+            }
+            addWord();
+        }
+
+        // Chama a função para animar o texto após o carregamento da página
+        window.onload = animateText;
+    </script>
+</body>
+</html>
